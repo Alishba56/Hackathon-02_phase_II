@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import SettingsForm from '@/components/user/settings-form';
+import { User } from '@/types';
 
 export default function SettingsPage() {
-  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [user, setUser] = useState<User | undefined>(undefined);
 
   useEffect(() => {
     const userData = localStorage.getItem('user');
